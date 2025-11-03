@@ -31,7 +31,7 @@ I use a mix of Python (pandas, Jupyter notebooks) and SQL (SQL Server Management
 3.  **Data Cleaning**: I normalize categories, parse dates, and handle missing/inconsistent values. The cleaned data goes into `Dataset/Vehicle_Data_Cleaned.csv`.
 4.  **SQL Analysis**: I import the cleaned data into SQL Server and use my `.sql` scripts for deeper analysis and reporting.
 5.  **Exploratory Data Analysis (EDA)**: I look at top makes/models, registrations by office and time, distributions, and trends.
-6.  **Advanced Analysis**: I run trend analysis, calculate growth rates, and detect anomalies or outliers. If location data is available, I sometimes map registrations geospatially.
+6.  **Advanced Analysis**: I run trend analysis, calculate growth rates, and detect anomalies or outliers.
 7.  **Forecasting & Dashboard (Optional)**: If I have time, I build a simple forecast or dashboard.
 8.  **Reporting**: I export results to CSV in `Reports/` and document my findings in markdown files.
 9.  **Reproducibility**: I keep all steps in notebooks/scripts and list required Python packages in `requirements.txt`.
