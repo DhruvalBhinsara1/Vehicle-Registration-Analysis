@@ -27,14 +27,19 @@ I use a mix of Python (pandas, Jupyter notebooks) and SQL (SQL Server Management
 ## My Analysis Workflow
 
 1.  **Data Ingestion**: I download the raw CSV from Kaggle and put it in the `Dataset/` folder.
+    
 2.  **Initial Exploration**: I use pandas to inspect columns, data types, and missing values.
+    
 3.  **Data Cleaning**: I normalize categories, parse dates, and handle missing/inconsistent values. The cleaned data goes into `Dataset/Vehicle_Data_Cleaned.csv`.
+    
 4.  **SQL Analysis**: I import the cleaned data into SQL Server and use my `.sql` scripts for deeper analysis and reporting.
+    
 5.  **Exploratory Data Analysis (EDA)**: I look at top makes/models, registrations by office and time, distributions, and trends.
+    
 6.  **Advanced Analysis**: I run trend analysis, calculate growth rates, and detect anomalies or outliers.
-7.  **Forecasting & Dashboard (Optional)**: If I have time, I build a simple forecast or dashboard.
-8.  **Reporting**: I export results to CSV in `Reports/` and document my findings in markdown files.
-9.  **Reproducibility**: I keep all steps in notebooks/scripts and list required Python packages in `requirements.txt`.
+    
+7.  **Reporting**: I export results to CSV in `Reports/` and document my findings in markdown files (such as `Detailed_Walk_Through.md`, `EDA.md`, and `Advanced_Analysis.md`). This ensures all outputs and insights are clearly recorded and easy to share.
+    
 
 ---
 
@@ -52,7 +57,63 @@ I use a mix of Python (pandas, Jupyter notebooks) and SQL (SQL Server Management
 ## My Project Structure
 
 ```text
-├─ Dataset/                  # raw and cleaned CSV files│   ├─ Vehicle_Data.csv│   └─ Vehicle_Data_Cleaned.csv├─ Notebook/                 # Jupyter notebooks for data cleaning and analysis│   └─ Data_Cleaning.ipynb├─ Reports/                  # generated CSV reports from analysis│   ├─ 1. Count of Vehicles by Type.csv│   ├─ 2. Registrations by Office.csv│   ├─ 3. Average CC by Maker (Only Makers with less 10 Vehicles).csv│   ├─ 4. Monthly Registration Trend.csv│   ├─ 5. Top 5 Most Powerful Vehicles.csv│   ├─ 6. Distinct Makers Count.csv│   ├─ 7. Find Outliers in CC.csv├─ SQL Queries/              # SQL scripts for analysis and cleaning│   ├─ 1. Count of Vehicles by Type.sql│   ├─ 2. Registrations by Office.sql│   ├─ 3. Average CC by Maker (Only Makers with less 10 Vehicles).sql│   ├─ 4. Monthly Registration Trend.sql│   ├─ 5. Top 5 Most Powerful Vehicles.sql│   ├─ 6. Distinct Makers Count.sql│   ├─ 7. Find Outliers in CC.sql│   ├─ Cleaning Registeration Office.sql│   └─ Creating Indexes.sql├─ Detailed_Walk_Through.md  # step-by-step analysis guide├─ SQL_Analysis_Guide.md     # SQL workflow and queries documentation├─ README.md                 # this file
+├─ Dataset/                      # Raw, cleaned, and processed data files
+│   ├─ Vehicle_Data.csv
+│   ├─ Vehicle_Data_Cleaned.csv
+│   └─ vehicle_df.parquet
+├─ Notebook/                     # Jupyter notebooks for data cleaning and analysis
+│   ├─ Data_Cleaning.ipynb
+│   ├─ EDA_Analysis.ipynb
+│   ├─ Trend_Analysis.ipynb
+│   └─ Advanced_Analysis/
+│       └─ images/
+│           └─ monthly_registration_trend.csv
+├─ Reports/                      # Generated CSV reports and images from analysis
+│   ├─ 1. Count of Vehicles by Type.csv
+│   ├─ 2. Registrations by Office.csv
+│   ├─ 3. Average CC by Maker (Only Makers with less 10 Vehicles).csv
+│   ├─ 4. Monthly Registration Trend.csv
+│   ├─ 5. Top 5 Most Powerful Vehicles.csv
+│   ├─ 6. Distinct Makers Count.csv
+│   ├─ 7. Find Outliers in CC.csv
+│   ├─ Registrations_by_Office.csv
+│   ├─ Top_10_Makers.csv
+│   ├─ Top_10_Makers_Market_Share.csv
+│   ├─ Top_10_Models.csv
+│   ├─ Top_10_Models_Market_Share.csv
+│   └─ images/
+│       ├─ Engine_Capacity_Distribution.png
+│       ├─ Engine_Capacity_Outliers.png
+│       ├─ Monthly_Registration_Trend.png
+│       ├─ Registrations_by_Office_Bar_Scaled.png
+│       ├─ Top_10_Makers_Bar.png
+│       ├─ Top_10_Makers_Market_Share_Bar.png
+│       ├─ Top_10_Models_Bar.png
+│       └─ Top_10_Models_Market_Share_Bar.png
+├─ SQL Queries/                  # SQL scripts for analysis and cleaning
+│   ├─ 1. Count of Vehicles by Type.sql
+│   ├─ 2. Registrations by Office.sql
+│   ├─ 3. Average CC by Maker (Only Makers with less 10 Vehicles).sql
+│   ├─ 4. Monthly Registration Trend.sql
+│   ├─ 5. Top 5 Most Powerful Vehicles.sql
+│   ├─ 6. Distinct Makers Count.sql
+│   ├─ 7. Find Outliers in CC.sql
+│   ├─ Checking Table and Column Names.sql
+│   ├─ Cleaning Registeration Office.sql
+│   └─ Creating Indexes.sql
+├─ Advanced_Analysis/            # Python scripts for advanced analysis
+│   ├─ seasonal_trends.py
+│   ├─ trend_analysis.py
+│   └─ images/
+│       ├─ average_registrations_by_month.csv
+│       ├─ average_registrations_by_month.png
+│       ├─ monthly_registration_heatmap.png
+│       └─ monthly_registration_trend.csv
+├─ Detailed_Walk_Through.md      # Step-by-step analysis guide
+├─ SQL_Analysis_Guide.md         # SQL workflow and queries documentation
+├─ Advanced_Analysis.md          # Advanced analysis documentation
+├─ EDA.md                        # Exploratory data analysis notes
+├─ README.md                     # This file
 ```
 
 ---
